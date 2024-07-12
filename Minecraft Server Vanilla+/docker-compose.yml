@@ -37,6 +37,8 @@ services:
       CURSEFORGE_FILES: |
         dynmapforge
         xaeros-minimap
+        appleskin
+        jei
 
     volumes:
       - ${DATA_DIRECTORY}:/data
