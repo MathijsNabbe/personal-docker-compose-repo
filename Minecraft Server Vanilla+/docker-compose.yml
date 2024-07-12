@@ -1,0 +1,40 @@
+services:
+  mc:
+    image: itzg/minecraft-server
+    tty: true
+    stdin_open: true
+    ports:
+      - "25565:25565"
+      - "8123:8123"
+    environment:
+      EULA: "TRUE"
+      INIT_MEMORY: "1G"
+      MEMORY: "4G"
+      MAX_MEMORY: "6G"
+      DIFFICULTY: "normal"
+      ALLOW_NETHER: "true"
+      ANNOUNCE_PLAYER_ACHIEVEMENTS: "true"
+      ENABLE_COMMAND_BLOCK: "true"
+      FORCE_GAMEMODE: "true"
+      GENERATE_STRUCTURES: "true"
+      MAX_BUILD_HEIGHT: "500"
+      SPAWN_ANIMALS: "true"
+      SPAWN_MONSTERS: "true"
+      SPAWN_NPCS: "true"
+      SPAWN_PROTECTION: "0"
+      MODE: "survival"
+      PVP: "false"
+      LEVEL_TYPE: "normal"
+      ONLINE_MODE: "true"
+      ALLOW_FLIGHT: "true"
+      SERVER_NAME: "Berenbenis"
+      ENABLE_AUTOPAUSE: "true"
+      ENABLE_AUTOSTOP: "false"
+
+      TYPE: "FORGE"
+      CF_API_KEY: ${CF_API_KEY}
+      CURSEFORGE_FILES: |
+        59433
+
+    volumes:
+      - /mnt/ssd/minecraft-server-data:/data
