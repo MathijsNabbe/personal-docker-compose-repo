@@ -37,6 +37,7 @@ services:
         dynmapforge
         xaeros-minimap
         jei
+        cobblegenrandomizer
 
     volumes:
       - ${DATA_DIRECTORY}:/data
