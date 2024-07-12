@@ -3,7 +3,6 @@ This docker-compose file will initialize a joinable minecraft server with a sele
 
 # Mods
 59433: Dynmap - Google Maps for Minecraft
-248787: AppleSkin - Advanced Hunger Bar
 238222: Just Enough Items - Recipe viewer
 263420: Xaero's Minimap
 
