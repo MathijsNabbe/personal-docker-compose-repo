@@ -36,7 +36,6 @@ services:
       CF_API_KEY: ${CF_API_KEY}
       CURSEFORGE_FILES: |
         59433
-        49648
 
     volumes:
       - ${DATA_DIRECTORY}:/data
