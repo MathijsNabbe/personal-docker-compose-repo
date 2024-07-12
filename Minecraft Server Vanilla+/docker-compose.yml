@@ -38,7 +38,7 @@ services:
         59433
         238222
         263420
-        541058
+        immersive-combat
 
     volumes:
       - ${DATA_DIRECTORY}:/data
