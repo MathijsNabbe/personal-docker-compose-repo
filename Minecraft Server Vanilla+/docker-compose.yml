@@ -37,6 +37,7 @@ services:
         dynmapforge
         xaeros-minimap
         jei
+        corpse
 
     volumes:
       - ${DATA_DIRECTORY}:/data
