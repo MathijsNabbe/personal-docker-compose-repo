@@ -3,6 +3,7 @@ services:
     image: itzg/minecraft-server
     tty: true
     stdin_open: true
+    restart: unless-stopped
     ports:
       - "25565:25565"
       - "8123:8123"
