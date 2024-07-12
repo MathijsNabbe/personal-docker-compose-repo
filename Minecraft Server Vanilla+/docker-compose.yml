@@ -35,10 +35,8 @@ services:
       TYPE: "FORGE"
       CF_API_KEY: ${CF_API_KEY}
       CURSEFORGE_FILES: |
-        59433
-        238222
-        263420
-        immersive-combat
+        dynmapforge
+        xaeros-minimap
 
     volumes:
       - ${DATA_DIRECTORY}:/data
