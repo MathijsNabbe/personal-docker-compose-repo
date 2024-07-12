@@ -5,6 +5,7 @@ This docker-compose file will initialize a joinable minecraft server with a sele
 59433: Dynmap - Google Maps for Minecraft
 238222: Just Enough Items - Recipe viewer
 263420: Xaero's Minimap
+541058: Immersive Combat
 
 # Ports
 25565: Minecraft\

@@ -38,6 +38,7 @@ services:
         59433
         238222
         263420
+        541058
 
     volumes:
       - ${DATA_DIRECTORY}:/data
