@@ -36,7 +36,6 @@ services:
       CURSEFORGE_FILES: |
         dynmapforge
         xaeros-minimap
-        appleskin:4770828
         jei
 
     volumes:
