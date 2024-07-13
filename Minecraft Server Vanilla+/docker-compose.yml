@@ -49,6 +49,8 @@ services:
 
         https://www.curseforge.com/minecraft/mc-mods/sound-physics-remastered
         https://www.curseforge.com/minecraft/mc-mods/ambientsounds
+        https://www.curseforge.com/minecraft/mc-mods/waterdripsound
+        https://www.curseforge.com/minecraft/mc-mods/projectile-sounds
 
         https://www.curseforge.com/minecraft/mc-mods/epic-fight-mod
         https://www.curseforge.com/minecraft/mc-mods/tree-harvester
@@ -92,6 +94,7 @@ services:
         https://www.curseforge.com/minecraft/mc-mods/citadel
         https://www.curseforge.com/minecraft/mc-mods/puzzles-lib
         https://www.curseforge.com/minecraft/mc-mods/balm
+        https://www.curseforge.com/minecraft/mc-mods/terrablender
 
     volumes:
       - ${DATA_DIRECTORY}:/data
