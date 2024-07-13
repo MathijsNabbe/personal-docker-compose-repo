@@ -35,6 +35,8 @@ services:
       CURSEFORGE_FILES: |
         https://www.curseforge.com/minecraft/mc-mods/dynmapforge
         https://www.curseforge.com/minecraft/mc-mods/xaeros-minimap
+        https://www.curseforge.com/minecraft/mc-mods/xaeros-world-map
+        https://www.curseforge.com/minecraft/mc-mods/xaeroplus
         https://www.curseforge.com/minecraft/mc-mods/jei
         https://www.curseforge.com/minecraft/mc-mods/just-enough-professions-jep
         https://www.curseforge.com/minecraft/mc-mods/just-enough-resources-jer
