@@ -49,17 +49,20 @@ services:
         https://www.curseforge.com/minecraft/mc-mods/tree-harvester
         https://www.curseforge.com/minecraft/mc-mods/better-animations-collection
         https://www.curseforge.com/minecraft/mc-mods/fast-leaf-decay
+        https://www.curseforge.com/minecraft/mc-mods/not-enough-animations
 
         https://www.curseforge.com/minecraft/mc-mods/cobblegenrandomizer
         https://www.curseforge.com/minecraft/mc-mods/corpse
         https://www.curseforge.com/minecraft/mc-mods/netherportalfix
         https://www.curseforge.com/minecraft/mc-mods/guard-villagers
+        https://www.curseforge.com/minecraft/mc-mods/lootr
 
         https://www.curseforge.com/minecraft/mc-mods/modernfix
         https://www.curseforge.com/minecraft/mc-mods/smooth-chunk-save
         https://www.curseforge.com/minecraft/mc-mods/chunk-sending-forge-fabric
         https://www.curseforge.com/minecraft/mc-mods/connectivity
         https://www.curseforge.com/minecraft/mc-mods/fix-gpu-memory-leak
+        https://www.curseforge.com/minecraft/mc-mods/leaky
 
         https://www.curseforge.com/minecraft/mc-mods/alexs-mobs
 
@@ -81,6 +84,7 @@ services:
         https://www.curseforge.com/minecraft/mc-mods/cupboard
         https://www.curseforge.com/minecraft/mc-mods/citadel
         https://www.curseforge.com/minecraft/mc-mods/puzzles-lib
+        https://www.curseforge.com/minecraft/mc-mods/balm
 
     volumes:
       - ${DATA_DIRECTORY}:/data
