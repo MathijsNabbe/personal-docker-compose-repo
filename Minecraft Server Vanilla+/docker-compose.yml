@@ -51,6 +51,7 @@ services:
         https://www.curseforge.com/minecraft/mc-mods/tree-harvester
         https://www.curseforge.com/minecraft/mc-mods/better-animations-collection
         https://www.curseforge.com/minecraft/mc-mods/fast-leaf-decay
+        https://www.curseforge.com/minecraft/mc-mods/falling-leaves-forge
 
         https://www.curseforge.com/minecraft/mc-mods/cobblegenrandomizer
         https://www.curseforge.com/minecraft/mc-mods/corpse
@@ -80,6 +81,7 @@ services:
         https://www.curseforge.com/minecraft/mc-mods/yungs-better-desert-temples
         https://www.curseforge.com/minecraft/mc-mods/better-village-forge
         https://www.curseforge.com/minecraft/mc-mods/biomes-o-plenty
+        https://www.curseforge.com/minecraft/mc-mods/when-dungeons-arise
 
         https://www.curseforge.com/minecraft/mc-mods/collective
         https://www.curseforge.com/minecraft/mc-mods/yungs-api
