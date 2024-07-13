@@ -98,6 +98,7 @@ services:
         https://www.curseforge.com/minecraft/mc-mods/terrablender
         https://www.curseforge.com/minecraft/mc-mods/creativecore
         https://www.curseforge.com/minecraft/mc-mods/cloth-config
+        https://www.curseforge.com/minecraft/mc-mods/bookshelf
 
     volumes:
       - ${DATA_DIRECTORY}:/data
