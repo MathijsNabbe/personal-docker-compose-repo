@@ -105,7 +105,6 @@ services:
         https://www.curseforge.com/minecraft/mc-mods/bookshelf
         https://www.curseforge.com/minecraft/mc-mods/gamemenumodoption
         https://www.curseforge.com/minecraft/mc-mods/library-ferret-forge
-        https://www.curseforge.com/minecraft/mc-mods/kotlin-for-forge
         https://www.curseforge.com/minecraft/mc-mods/playeranimator
 
     volumes:
