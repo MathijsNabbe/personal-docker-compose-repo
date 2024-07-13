@@ -43,6 +43,7 @@ services:
         https://www.curseforge.com/minecraft/mc-mods/cupboard
         https://www.curseforge.com/minecraft/mc-mods/corpse
         https://www.curseforge.com/minecraft/mc-mods/wearable-backpacks
+        https://www.curseforge.com/minecraft/mc-mods/epic-fight-mod
 
     volumes:
       - ${DATA_DIRECTORY}:/data
