@@ -37,13 +37,14 @@ services:
         https://www.curseforge.com/minecraft/mc-mods/xaeros-minimap
         https://www.curseforge.com/minecraft/mc-mods/jei
         https://www.curseforge.com/minecraft/mc-mods/cobblegenrandomizer
-        https://www.curseforge.com/minecraft/mc-mods/appleskin
         https://www.curseforge.com/minecraft/mc-mods/modernfix
         https://www.curseforge.com/minecraft/mc-mods/smooth-chunk-save
         https://www.curseforge.com/minecraft/mc-mods/cupboard
         https://www.curseforge.com/minecraft/mc-mods/corpse
         https://www.curseforge.com/minecraft/mc-mods/wearable-backpacks
         https://www.curseforge.com/minecraft/mc-mods/epic-fight-mod
+        https://www.curseforge.com/minecraft/mc-mods/netherportalfix
+        https://www.curseforge.com/minecraft/mc-mods/rpg-hud
 
     volumes:
       - ${DATA_DIRECTORY}:/data
