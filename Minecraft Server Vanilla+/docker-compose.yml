@@ -106,6 +106,7 @@ services:
         https://www.curseforge.com/minecraft/mc-mods/simple-voice-chat
         https://www.curseforge.com/minecraft/mc-mods/waystones
         https://www.curseforge.com/minecraft/mc-mods/worldtools
+        https://www.curseforge.com/minecraft/mc-mods/kotlin-for-forge
 
     volumes:
       - ${DATA_DIRECTORY}:/data
