@@ -40,6 +40,7 @@ services:
         https://www.curseforge.com/minecraft/mc-mods/appleskin
         https://www.curseforge.com/minecraft/mc-mods/modernfix
         https://www.curseforge.com/minecraft/mc-mods/damagenumbers
+        https://www.curseforge.com/minecraft/mc-mods/smooth-chunk-save
 
     volumes:
       - ${DATA_DIRECTORY}:/data
