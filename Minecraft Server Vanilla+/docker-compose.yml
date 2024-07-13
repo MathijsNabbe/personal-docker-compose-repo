@@ -92,7 +92,6 @@ services:
         https://www.curseforge.com/minecraft/mc-mods/citadel
         https://www.curseforge.com/minecraft/mc-mods/puzzles-lib
         https://www.curseforge.com/minecraft/mc-mods/balm
-        https://www.curseforge.com/minecraft/mc-mods/not-enough-animations
 
     volumes:
       - ${DATA_DIRECTORY}:/data
