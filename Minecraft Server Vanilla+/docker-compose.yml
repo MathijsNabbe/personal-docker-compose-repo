@@ -41,10 +41,12 @@ services:
         https://www.curseforge.com/minecraft/mc-mods/smooth-chunk-save
         https://www.curseforge.com/minecraft/mc-mods/cupboard
         https://www.curseforge.com/minecraft/mc-mods/corpse
-        https://www.curseforge.com/minecraft/mc-mods/wearable-backpacks
         https://www.curseforge.com/minecraft/mc-mods/epic-fight-mod
         https://www.curseforge.com/minecraft/mc-mods/netherportalfix
         https://www.curseforge.com/minecraft/mc-mods/rpg-hud
+        https://www.curseforge.com/minecraft/mc-mods/spiders-2-0
+        https://www.curseforge.com/minecraft/mc-mods/stellar-sky
+        https://www.curseforge.com/minecraft/mc-mods/tree-harvester
 
     volumes:
       - ${DATA_DIRECTORY}:/data
