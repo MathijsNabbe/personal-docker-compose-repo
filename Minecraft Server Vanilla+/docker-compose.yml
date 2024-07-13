@@ -68,6 +68,7 @@ services:
         https://www.curseforge.com/minecraft/mc-mods/collective
         https://www.curseforge.com/minecraft/mc-mods/yungs-api
         https://www.curseforge.com/minecraft/mc-mods/cupboard
+        https://www.curseforge.com/minecraft/mc-mods/citadel
 
     volumes:
       - ${DATA_DIRECTORY}:/data
