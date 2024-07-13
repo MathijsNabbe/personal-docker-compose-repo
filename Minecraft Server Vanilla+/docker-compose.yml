@@ -56,7 +56,6 @@ services:
         https://www.curseforge.com/minecraft/mc-mods/yungs-better-witch-huts
         https://www.curseforge.com/minecraft/mc-mods/yungs-extras
         https://www.curseforge.com/minecraft/mc-mods/yungs-better-desert-temples
-        https://www.curseforge.com/minecraft/mc-mods/yungs-better-caves
 
     volumes:
       - ${DATA_DIRECTORY}:/data
