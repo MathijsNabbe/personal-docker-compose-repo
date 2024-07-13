@@ -100,6 +100,7 @@ services:
         https://www.curseforge.com/minecraft/mc-mods/cloth-config
         https://www.curseforge.com/minecraft/mc-mods/bookshelf
         https://www.curseforge.com/minecraft/mc-mods/gamemenumodoption
+        https://www.curseforge.com/minecraft/mc-mods/jade
 
     volumes:
       - ${DATA_DIRECTORY}:/data
