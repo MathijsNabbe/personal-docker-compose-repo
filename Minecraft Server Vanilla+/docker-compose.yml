@@ -104,6 +104,7 @@ services:
         https://www.curseforge.com/minecraft/mc-mods/library-ferret-forge
         https://www.curseforge.com/minecraft/mc-mods/open-parties-and-claims
         https://www.curseforge.com/minecraft/mc-mods/simple-voice-chat
+        https://www.curseforge.com/minecraft/mc-mods/waystones
 
     volumes:
       - ${DATA_DIRECTORY}:/data
