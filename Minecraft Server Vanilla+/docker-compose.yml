@@ -58,7 +58,6 @@ services:
         https://www.curseforge.com/minecraft/mc-mods/better-animations-collection
         https://www.curseforge.com/minecraft/mc-mods/fast-leaf-decay
         https://www.curseforge.com/minecraft/mc-mods/falling-leaves-forge
-        https://www.curseforge.com/minecraft/mc-mods/fast-async-world-save-forge-fabric
 
         https://www.curseforge.com/minecraft/mc-mods/cobblegenrandomizer
         https://www.curseforge.com/minecraft/mc-mods/corpse
@@ -72,6 +71,7 @@ services:
         https://www.curseforge.com/minecraft/mc-mods/connectivity
         https://www.curseforge.com/minecraft/mc-mods/fix-gpu-memory-leak
         https://www.curseforge.com/minecraft/mc-mods/leaky
+        https://www.curseforge.com/minecraft/mc-mods/fast-async-world-save-forge-fabric
 
         https://www.curseforge.com/minecraft/mc-mods/alexs-mobs
 
