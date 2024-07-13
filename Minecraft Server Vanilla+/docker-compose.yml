@@ -47,6 +47,17 @@ services:
         https://www.curseforge.com/minecraft/mc-mods/stellar-sky
         https://www.curseforge.com/minecraft/mc-mods/tree-harvester
         https://www.curseforge.com/minecraft/mc-mods/yungs-better-dungeons
+        https://www.curseforge.com/minecraft/mc-mods/yungs-better-jungle-temples
+        https://www.curseforge.com/minecraft/mc-mods/yungs-better-mineshafts-forge
+        https://www.curseforge.com/minecraft/mc-mods/yungs-better-strongholds
+        https://www.curseforge.com/minecraft/mc-mods/yungs-better-ocean-monuments
+        https://www.curseforge.com/minecraft/mc-mods/yungs-better-nether-fortresses
+        https://www.curseforge.com/minecraft/mc-mods/yungs-better-end-island
+        https://www.curseforge.com/minecraft/mc-mods/yungs-bridges
+        https://www.curseforge.com/minecraft/mc-mods/yungs-better-witch-huts
+        https://www.curseforge.com/minecraft/mc-mods/yungs-extras
+        https://www.curseforge.com/minecraft/mc-mods/yungs-better-desert-temples
+        https://www.curseforge.com/minecraft/mc-mods/yungs-better-caves
 
     volumes:
       - ${DATA_DIRECTORY}:/data
