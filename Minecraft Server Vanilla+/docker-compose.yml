@@ -72,6 +72,7 @@ services:
         https://www.curseforge.com/minecraft/mc-mods/fix-gpu-memory-leak
         https://www.curseforge.com/minecraft/mc-mods/leaky
         https://www.curseforge.com/minecraft/mc-mods/fast-async-world-save-forge-fabric
+        https://www.curseforge.com/minecraft/mc-mods/better-chunk-loading-forge-fabric
 
         https://www.curseforge.com/minecraft/mc-mods/alexs-mobs
 
