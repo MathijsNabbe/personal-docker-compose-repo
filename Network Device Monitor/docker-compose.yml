@@ -1,7 +1,7 @@
 version: "3"
 services:
   pialert:
-    container_name: PiAlert
+    container_name: network-device-monitor
     hostname: PiAlert
     privileged: true
     image: jokobsk/pi.alert:latest
