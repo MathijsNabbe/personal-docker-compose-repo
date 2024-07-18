@@ -117,6 +117,7 @@ services:
         https://www.curseforge.com/minecraft/mc-mods/playeranimator
         https://www.curseforge.com/minecraft/mc-mods/ferritecore
         https://www.curseforge.com/minecraft/mc-mods/framework
+        https://www.curseforge.com/minecraft/mc-mods/curios
 
     volumes:
       - ${DATA_DIRECTORY}:/data
