@@ -70,6 +70,8 @@ services:
         https://www.curseforge.com/minecraft/mc-mods/friendly-griefing
         https://www.curseforge.com/minecraft/mc-mods/xannoszs-better-minecarts
         https://www.curseforge.com/minecraft/mc-mods/backpacked
+        https://www.curseforge.com/minecraft/mc-mods/golden-hopper
+        https://www.curseforge.com/minecraft/mc-mods/mrcrayfish-furniture-mod/files/all?page=1&pageSize=20
 
         https://www.curseforge.com/minecraft/mc-mods/modernfix
         https://www.curseforge.com/minecraft/mc-mods/smooth-chunk-save
@@ -113,6 +115,7 @@ services:
         https://www.curseforge.com/minecraft/mc-mods/library-ferret-forge
         https://www.curseforge.com/minecraft/mc-mods/playeranimator
         https://www.curseforge.com/minecraft/mc-mods/ferritecore
+        https://www.curseforge.com/minecraft/mc-mods/framework
 
     volumes:
       - ${DATA_DIRECTORY}:/data
