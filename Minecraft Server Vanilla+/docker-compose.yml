@@ -6,7 +6,7 @@ services:
     restart: unless-stopped
     ports:
       - "25565:25565"
-      - "8123:8100"
+      - "8123:8123"
     environment:
       EULA: "TRUE"
       INIT_MEMORY: "1G"
