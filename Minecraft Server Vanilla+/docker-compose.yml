@@ -34,8 +34,7 @@ services:
       VERSION: "1.20.1"
       CF_API_KEY: ${CF_API_KEY}
       CURSEFORGE_FILES: |
-        https://www.curseforge.com/minecraft/mc-mods/bluemap
-        https://www.curseforge.com/minecraft/mc-mods/blues-map-addon
+        https://www.curseforge.com/minecraft/mc-mods/dynmapforge
         https://www.curseforge.com/minecraft/mc-mods/xaeros-minimap
         https://www.curseforge.com/minecraft/mc-mods/xaeros-world-map
         https://www.curseforge.com/minecraft/mc-mods/jei
