@@ -1,0 +1,52 @@
+version: '3'
+
+networks:
+  traefik:
+    external: true
+
+volumes:
+  traefik-ssl-certs:
+    driver: local
+    
+services:
+  traefik:
+    image: traefik:latest
+    container_name: traefik
+    ports:
+      - 80:80
+      - 443:443
+      - 8080:8080
+    volumes:
+      - traefik-ssl-certs:/ssl-certs
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    networks:
+      - traefik
+    restart: unless-stopped
+    environment:
+      - TRAEFIK_GLOBAL_CHECKNEWVERSION=true
+      - TRAEFIK_GLOBAL_SENDANONYMOUSUSAGE=false
+      - TRAEFIK_API_DASHBOARD=true
+      - TRAEFIK_API_DISABLEDASHBOARDAD=true
+      - TRAEFIK_API_INSECURE=true
+      - TRAEFIK_PROVIDERS_DOCKER=true
+      - TRAEFIK_PROVIDERS_DOCKER_EXPOSEDBYDEFAULT=false
+
+      - TRAEFIK_ENTRYPOINTS_web=true
+      - TRAEFIK_ENTRYPOINTS_web_ADDRESS=:80
+
+      - TRAEFIK_ENTRYPOINTS_websecure=true
+      - TRAEFIK_ENTRYPOINTS_websecure_ADDRESS=:443
+      
+      - TRAEFIK_ENTRYPOINTS_minecraft=true
+      - TRAEFIK_ENTRYPOINTS_minecraft_ADDRESS=:25565
+      
+    labels:
+      traefik.enable: "true"
+      traefik.docker.network: "traefik"
+
+      traefik.http.routers.traefik.entrypoints: "web"
+      traefik.http.routers.traefik.rule: "Host(`dashboard.mathijsnabbe.nl`)"
+      traefik.http.routers.traefik.service: "traefik-svc"
+      traefik.http.services.traefik-svc.loadbalancer.server.port: 8080
+
+
