@@ -28,98 +28,30 @@ services:
       LEVEL_TYPE: "normal"
       ONLINE_MODE: "true"
       ALLOW_FLIGHT: "true"
-      SERVER_NAME: "Berenbenis"
+      SERVER_NAME: "Nabbe's Mc Server"
 
       TYPE: "FORGE"
       VERSION: "1.20.1"
-      CF_API_KEY: ${CF_API_KEY}
-      CURSEFORGE_FILES: |
-        https://www.curseforge.com/minecraft/mc-mods/dynmapforge
-        https://www.curseforge.com/minecraft/mc-mods/xaeros-minimap
-        https://www.curseforge.com/minecraft/mc-mods/xaeros-world-map
-        https://www.curseforge.com/minecraft/mc-mods/jei
-        https://www.curseforge.com/minecraft/mc-mods/just-enough-professions-jep
-        https://www.curseforge.com/minecraft/mc-mods/just-enough-resources-jer
-        https://www.curseforge.com/minecraft/mc-mods/appleskin
-        https://www.curseforge.com/minecraft/mc-mods/chat-heads
-        https://www.curseforge.com/minecraft/mc-mods/enchantment-descriptions
-        https://www.curseforge.com/minecraft/mc-mods/food-effect-tooltips-forge
-        https://www.curseforge.com/minecraft/mc-mods/effect-tooltips
-        https://www.curseforge.com/minecraft/mc-mods/inventory-sorter
-        https://www.curseforge.com/minecraft/mc-mods/just-enough-effect-descriptions-jeed
-        https://www.curseforge.com/minecraft/mc-mods/new-effect-descriptions
-        https://www.curseforge.com/minecraft/mc-mods/ydms-mobhealthbar-mod
-        https://www.curseforge.com/minecraft/mc-mods/damagenumbers
 
-        https://www.curseforge.com/minecraft/mc-mods/sound-physics-remastered
-        https://www.curseforge.com/minecraft/mc-mods/ambientsounds
-        https://www.curseforge.com/minecraft/mc-mods/waterdripsound
-        https://www.curseforge.com/minecraft/mc-mods/projectile-sounds
+    labels:
+      traefik.enable: "true"
+      traefik.docker.network: "traefik"
 
-        https://www.curseforge.com/minecraft/mc-mods/better-combat-by-daedelus
-        https://www.curseforge.com/minecraft/mc-mods/better-animations-collection
-        https://www.curseforge.com/minecraft/mc-mods/fast-leaf-decay
-        https://www.curseforge.com/minecraft/mc-mods/falling-leaves-forge
-        https://www.curseforge.com/minecraft/mc-mods/worldedit
+      traefik.http.routers.minecraft.entrypoints: "minecraft"
+      traefik.http.routers.minecraft.rule: "Host(`mc.mathijsnabbe.nl`)"
 
-        https://www.curseforge.com/minecraft/mc-mods/cobblegenrandomizer
-        https://www.curseforge.com/minecraft/mc-mods/corpse
-        https://www.curseforge.com/minecraft/mc-mods/netherportalfix
-        https://www.curseforge.com/minecraft/mc-mods/guard-villagers
-        https://www.curseforge.com/minecraft/mc-mods/lootr
-        https://www.curseforge.com/minecraft/mc-mods/friendly-griefing
-        https://www.curseforge.com/minecraft/mc-mods/xannoszs-better-minecarts
-        https://www.curseforge.com/minecraft/mc-mods/sophisticated-backpacks
-        https://www.curseforge.com/minecraft/mc-mods/golden-hopper
-        https://www.curseforge.com/minecraft/mc-mods/mrcrayfish-furniture-mod
-        https://www.curseforge.com/minecraft/mc-mods/friendly-fire
-        https://www.curseforge.com/minecraft/mc-mods/crafting-automat
+      traefik.http.routers.dynmap.entrypoints: "web"
+      traefik.http.routers.dynmap.rule: "Host(`maps.mc.mathijsnabbe.nl`)"
+      traefik.http.routers.dynmap.service: "dynmap-svc"
+      traefik.http.services.dynmap-svc.loadbalancer.server.port: 8123
 
-        https://www.curseforge.com/minecraft/mc-mods/modernfix
-        https://www.curseforge.com/minecraft/mc-mods/smooth-chunk-save
-        https://www.curseforge.com/minecraft/mc-mods/chunk-sending-forge-fabric
-        https://www.curseforge.com/minecraft/mc-mods/connectivity
-        https://www.curseforge.com/minecraft/mc-mods/fix-gpu-memory-leak
-        https://www.curseforge.com/minecraft/mc-mods/leaky
-        https://www.curseforge.com/minecraft/mc-mods/fast-async-world-save-forge-fabric
-        https://www.curseforge.com/minecraft/mc-mods/better-chunk-loading-forge-fabric
-
-        https://www.curseforge.com/minecraft/mc-mods/alexs-mobs
-
-        https://www.curseforge.com/minecraft/mc-mods/yungs-better-dungeons
-        https://www.curseforge.com/minecraft/mc-mods/yungs-better-jungle-temples
-        https://www.curseforge.com/minecraft/mc-mods/yungs-better-mineshafts-forge
-        https://www.curseforge.com/minecraft/mc-mods/yungs-better-strongholds
-        https://www.curseforge.com/minecraft/mc-mods/yungs-better-ocean-monuments
-        https://www.curseforge.com/minecraft/mc-mods/yungs-better-nether-fortresses
-        https://www.curseforge.com/minecraft/mc-mods/yungs-better-end-island
-        https://www.curseforge.com/minecraft/mc-mods/yungs-bridges
-        https://www.curseforge.com/minecraft/mc-mods/yungs-better-witch-huts
-        https://www.curseforge.com/minecraft/mc-mods/yungs-extras
-        https://www.curseforge.com/minecraft/mc-mods/yungs-better-desert-temples
-        https://www.curseforge.com/minecraft/mc-mods/yungs-better-nether-fortresses
-        https://www.curseforge.com/minecraft/mc-mods/better-village-forge
-        https://www.curseforge.com/minecraft/mc-mods/biomes-o-plenty
-        https://www.curseforge.com/minecraft/mc-mods/when-dungeons-arise
-        https://www.curseforge.com/minecraft/mc-mods/horror-elements-mod
-
-        https://www.curseforge.com/minecraft/mc-mods/collective
-        https://www.curseforge.com/minecraft/mc-mods/yungs-api
-        https://www.curseforge.com/minecraft/mc-mods/cupboard
-        https://www.curseforge.com/minecraft/mc-mods/citadel
-        https://www.curseforge.com/minecraft/mc-mods/puzzles-lib
-        https://www.curseforge.com/minecraft/mc-mods/balm
-        https://www.curseforge.com/minecraft/mc-mods/terrablender
-        https://www.curseforge.com/minecraft/mc-mods/creativecore
-        https://www.curseforge.com/minecraft/mc-mods/cloth-config
-        https://www.curseforge.com/minecraft/mc-mods/bookshelf
-        https://www.curseforge.com/minecraft/mc-mods/gamemenumodoption
-        https://www.curseforge.com/minecraft/mc-mods/library-ferret-forge
-        https://www.curseforge.com/minecraft/mc-mods/playeranimator
-        https://www.curseforge.com/minecraft/mc-mods/ferritecore
-        https://www.curseforge.com/minecraft/mc-mods/framework
-        https://www.curseforge.com/minecraft/mc-mods/curios
-        https://www.curseforge.com/minecraft/mc-mods/sophisticated-core
-
+    networks:
+      - traefik
+      
     volumes:
-      - ${DATA_DIRECTORY}:/data
+      - /home/mahnabbe/gamedata/minecraft/data:/data
+
+networks:
+  traefik:
+    external: true
+      
