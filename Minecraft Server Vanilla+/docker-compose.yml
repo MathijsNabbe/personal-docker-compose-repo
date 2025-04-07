@@ -42,7 +42,6 @@ services:
       traefik.http.routers.minecraft.entrypoints: "minecraft"
       traefik.http.routers.minecraft.rule: "Host(`mc.mathijsnabbe.nl`)"
 
-
       traefik.http.routers.dynmap.entrypoints: "web"
       traefik.http.routers.dynmap.rule: "Host(`maps.mc.mathijsnabbe.nl`)"
       traefik.http.routers.dynmap.service: "dynmap-svc"
