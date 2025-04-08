@@ -1,0 +1,70 @@
+version: '3.8'
+
+services:
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    volumes:
+       - /home/mahnabbe/configs/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
+    networks:
+      - monitoring
+
+  node_exporter:
+    image: prom/node-exporter:latest
+    container_name: node_exporter
+    volumes:
+      - /var/lib/node_exporter:/var/lib/node_exporter
+    command:
+      - '--collector.textfile.directory=/var/lib/node_exporter'
+    ports:
+      - "9100:9100"
+    pid: "host"
+    restart: unless-stopped
+    networks:
+      - monitoring
+
+  dcgm_exporter:
+    image: nvidia/dcgm-exporter:latest
+    container_name: dcgm_exporter
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+    ports:
+      - "9400:9400"
+    restart: unless-stopped
+    networks:
+      - monitoring
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_USER=${GF_USER}
+      - GF_SECURITY_ADMIN_PASSWORD=${GF_PASSWORD}
+    volumes:
+      - grafana-storage:/var/lib/grafana
+    restart: unless-stopped
+    networks:
+      - monitoring
+      - traefik
+    labels:
+      traefik.enable: "true"
+      traefik.docker.network: "traefik"
+
+      traefik.http.routers.grafana.entrypoints: "web"
+      traefik.http.routers.grafana.rule: "Host(`stats.mathijsnabbe.nl`)"
+      traefik.http.routers.grafana.service: "grafana-svc"
+      traefik.http.services.grafana-svc.loadbalancer.server.port: 3000
+
+volumes:
+  grafana-storage:
+
+networks:
+  monitoring:
+  traefik:
+
+    external: true
