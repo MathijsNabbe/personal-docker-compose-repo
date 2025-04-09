@@ -1,6 +1,6 @@
 FROM ubuntu:22.04
 
-# Update and install dependencies, including libyaml-dev
+# Update and install dependencies, including build-essential and libyaml-dev
 RUN apt-get update && \
     apt-get install -y \
     curl \
@@ -10,7 +10,8 @@ RUN apt-get update && \
     libicu-dev \
     libkrb5-3 \
     libcurl4-openssl-dev \
-    libyaml-dev && \
+    libyaml-dev \
+    build-essential && \
     apt-get clean
 
 # Create runner user and ensure the directories have the correct ownership
@@ -31,6 +32,9 @@ RUN chmod +x entrypoint.sh
 
 # Set runner user
 USER runner
+
+# Install the specific Bundler version for Ruby 2.7
+RUN gem install bundler -v 2.4.22
 
 # Set entrypoint
 ENTRYPOINT ["./entrypoint.sh"]
