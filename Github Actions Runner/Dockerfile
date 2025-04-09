@@ -14,5 +14,5 @@ RUN curl -O -L https://github.com/actions/runner/releases/download/v2.316.0/acti
 COPY entrypoint.sh entrypoint.sh
 RUN chmod +x entrypoint.sh
 
-USER runner
+USER root
 ENTRYPOINT ["./entrypoint.sh"]
