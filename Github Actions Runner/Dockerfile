@@ -10,7 +10,7 @@ RUN apt-get update && \
     libicu-dev \
     libkrb5-3 \
     libcurl4-openssl-dev \
-    libyaml-dev && \   # Add libyaml-dev for Ruby installation
+    libyaml-dev && \
     apt-get clean
 
 # Create runner user and ensure the directories have the correct ownership
