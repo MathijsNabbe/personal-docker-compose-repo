@@ -6,7 +6,6 @@ RUN apt-get update && \
 
 RUN useradd -m -s /bin/bash runner
 WORKDIR /home/runner
-RUN chown -R runner:runner /home/runner
 
 RUN curl -O -L https://github.com/actions/runner/releases/download/v2.316.0/actions-runner-linux-x64-2.316.0.tar.gz && \
     tar xzf actions-runner-linux-x64-2.316.0.tar.gz && \
