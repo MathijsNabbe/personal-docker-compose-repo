@@ -14,8 +14,6 @@ services:
     restart: unless-stopped
     volumes:
       - runner-data:/home/runner/_work
-      - ./runner:/home/runner
-    user: "runner:runner"
 
 volumes:
   runner-data:
