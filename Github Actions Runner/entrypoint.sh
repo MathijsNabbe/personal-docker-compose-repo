@@ -16,6 +16,8 @@ cleanup() {
   exit 0
 }
 
+chown -R runner:runner /home/runner/_work
+
 trap cleanup SIGINT SIGTERM
 
 echo "Starting runner..."
