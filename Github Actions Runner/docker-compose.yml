@@ -1,5 +1,5 @@
 services:
-  github-runner:
+  jekyll-github-runner:
     build: .
     container_name: github-runner
     environment:
