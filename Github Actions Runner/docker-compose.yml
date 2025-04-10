@@ -1,16 +1,12 @@
-version: '3.8'
+version: '3.9'
 
 services:
   github-runner:
-    image: my-github-runner:latest
+    build: .
     container_name: github-runner
-    build:
-      context: .
-      dockerfile: Dockerfile
     environment:
-      REPO_URL: ${RUNNER_URL}
-      RUNNER_TOKEN: ${RUNNER_TOKEN}
-      RUNNER_NAME: ${RUNNER_NAME}
+      - REPO_URL=https://github.com/MathijsNabbe/Digital-CV
+      - RUNNER_TOKEN=AKDRG3CZBBMUE4ULBV2ULN3H66SCM
     restart: unless-stopped
 
 volumes:

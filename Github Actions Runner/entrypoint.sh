@@ -1,22 +1,35 @@
 #!/bin/bash
+set -e
 
-echo "Configuring GitHub Actions Runner..."
+if [ -z "$REPO_URL" ] || [ -z "$RUNNER_TOKEN" ]; then
+  echo "REPO_URL and RUNNER_TOKEN must be set"
+  exit 1
+fi
 
-./config.sh \
+cd /home/runner
+
+# Download and extract runner
+RUNNER_VERSION="2.317.0"
+RUNNER_ARCHIVE="actions-runner-linux-x64-${RUNNER_VERSION}.tar.gz"
+RUNNER_DIR="actions-runner"
+
+if [ ! -d "$RUNNER_DIR" ]; then
+  echo "Downloading GitHub Actions runner..."
+  curl -O -L https://github.com/actions/runner/releases/download/v${RUNNER_VERSION}/${RUNNER_ARCHIVE}
+  mkdir "$RUNNER_DIR"
+  tar -xzf ${RUNNER_ARCHIVE} -C "$RUNNER_DIR"
+  rm ${RUNNER_ARCHIVE}
+fi
+
+cd "$RUNNER_DIR"
+
+# Configure the runner
+./config.sh --unattended \
   --url "$REPO_URL" \
   --token "$RUNNER_TOKEN" \
-  --name "$RUNNER_NAME" \
-  --work "_work" \
-  --unattended \
-  --replace
+  --name "$(hostname)" \
+  --work _work \
+  --labels self-hosted,jekyll,sonar
 
-cleanup() {
-  echo "Removing runner..."
-  ./config.sh remove --unattended --token "$RUNNER_TOKEN"
-  exit 0
-}
-
-trap cleanup SIGINT SIGTERM
-
-echo "Starting runner..."
-./run.sh
+# Run the runner
+exec ./run.sh

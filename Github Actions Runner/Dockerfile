@@ -1,40 +1,42 @@
 FROM ubuntu:22.04
 
-# Update and install dependencies, including build-essential and libyaml-dev
-RUN apt-get update && \
-    apt-get install -y \
-    curl \
-    tar \
-    git \
-    unzip \
-    libicu-dev \
-    libkrb5-3 \
-    libcurl4-openssl-dev \
-    libyaml-dev \
-    build-essential && \
-    apt-get clean
+# Install dependencies
+RUN apt-get update && apt-get install -y \
+    curl git wget unzip sudo gnupg2 build-essential libffi-dev libyaml-dev \
+    libgdbm-dev libncurses5-dev libtool bison libssl-dev libreadline-dev \
+    zlib1g-dev libgmp-dev libgdbm-compat-dev software-properties-common \
+    ruby-full ruby-dev nodejs npm openjdk-17-jre-headless \
+    && rm -rf /var/lib/apt/lists/*
 
-# Create runner user and ensure the directories have the correct ownership
+# Install Ruby
+RUN apt-get update && apt-get install -y \
+    ruby-full \
+    ruby-dev \
+    build-essential \
+    zlib1g-dev
+
+# Install Jekyll and Bundler
+RUN gem install bundler jekyll
+
+# Install SonarScanner
+ENV SONAR_SCANNER_VERSION=5.0.1.3006
+RUN wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-${SONAR_SCANNER_VERSION}-linux.zip && \
+    unzip sonar-scanner-cli-${SONAR_SCANNER_VERSION}-linux.zip && \
+    mv sonar-scanner-${SONAR_SCANNER_VERSION}-linux /opt/sonar-scanner && \
+    ln -s /opt/sonar-scanner/bin/sonar-scanner /usr/local/bin/sonar-scanner && \
+    rm sonar-scanner-cli-${SONAR_SCANNER_VERSION}-linux.zip
+
+ENV PATH="${PATH}:/opt/sonar-scanner/bin"
+
+# Add a user for the GitHub runner
 RUN useradd -m -s /bin/bash runner
-RUN mkdir -p /opt/hostedtoolcache /home/runner/_work && \
-    chown -R runner:runner /opt/hostedtoolcache /home/runner
 
+# Copy entrypoint
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+# Switch to runner user
+USER runner
 WORKDIR /home/runner
 
-# Download and extract GitHub Actions runner
-RUN curl -O -L https://github.com/actions/runner/releases/download/v2.316.0/actions-runner-linux-x64-2.316.0.tar.gz && \
-    tar xzf actions-runner-linux-x64-2.316.0.tar.gz && \
-    rm actions-runner-linux-x64-2.316.0.tar.gz
-
-# Copy and set entrypoint script
-COPY entrypoint.sh entrypoint.sh
-RUN chmod +x entrypoint.sh
-
-# Set runner user
-USER runner
-
-# Install the specific Bundler version for Ruby 2.7
-RUN gem install bundler -v 2.4.22
-
-# Set entrypoint
-ENTRYPOINT ["./entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
