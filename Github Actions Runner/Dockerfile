@@ -31,6 +31,11 @@ ENV PATH="${PATH}:/opt/sonar-scanner/bin"
 # Add a user for the GitHub runner
 RUN useradd -m -s /bin/bash runner
 
+# Give the runner user ownership of required directories
+RUN mkdir -p /var/lib/gems && \
+    chown -R runner:runner /var/lib/gems && \
+    chown -R runner:runner /usr/local/bin
+
 # Copy entrypoint
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh

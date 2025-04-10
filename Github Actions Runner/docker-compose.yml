@@ -1,12 +1,10 @@
-version: '3.9'
-
 services:
   github-runner:
     build: .
     container_name: github-runner
     environment:
       - REPO_URL=https://github.com/MathijsNabbe/Digital-CV
-      - RUNNER_TOKEN=AKDRG3CZBBMUE4ULBV2ULN3H66SCM
+      - RUNNER_TOKEN=AKDRG3FXHJCAXAM4JROHIDTH67FNY 
     restart: unless-stopped
 
 volumes:

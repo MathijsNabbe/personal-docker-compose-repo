@@ -23,11 +23,14 @@ fi
 
 cd "$RUNNER_DIR"
 
+# Remove old runner
+./config.sh remove
+
 # Configure the runner
 ./config.sh --unattended \
   --url "$REPO_URL" \
   --token "$RUNNER_TOKEN" \
-  --name "$(hostname)" \
+  --name "Custom Jekyll Runner" \
   --work _work \
   --labels self-hosted,jekyll,sonar
 
