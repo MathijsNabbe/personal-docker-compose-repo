@@ -6,3 +6,6 @@ Certain features are behind a paywall in SonarQube. Fortunatly, a community plug
 
 * /var/lib/docker/volumes/sonarqube_sonarqube_extensions/_data/plugins
 * /var/lib/docker/volumes/sonarqube_sonarqube_conf/_data/sonar.properties
+
+## Common Fixes
+If a project is ignoring files that you do want to have analysed, it may be because these files are mentioned in .gitignore. Since SonarQube respects .gitignore files, you can disable this rule in `Project Settings --> General Settings --> SCM --> Disable the SCM Sensor`
