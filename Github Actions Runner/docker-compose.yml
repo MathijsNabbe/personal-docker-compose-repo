@@ -3,8 +3,8 @@ services:
     build: .
     container_name: github-runner
     environment:
-      - REPO_URL: ${RUNNER_URL}
-      - RUNNER_TOKEN: ${RUNNER_TOKEN}
+      REPO_URL: ${RUNNER_URL}
+      RUNNER_TOKEN: ${RUNNER_TOKEN}
     restart: unless-stopped
 
 volumes:
