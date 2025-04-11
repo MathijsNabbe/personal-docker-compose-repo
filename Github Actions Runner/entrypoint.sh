@@ -23,16 +23,16 @@ fi
 
 cd "$RUNNER_DIR"
 
-# Remove old runner
-./config.sh remove
-
-# Configure the runner
-./config.sh --unattended \
-  --url "$REPO_URL" \
-  --token "$RUNNER_TOKEN" \
-  --name "Custom Jekyll Runner" \
-  --work _work \
-  --labels self-hosted,jekyll,sonar
+# Only configure if not already configured
+if [ ! -f .runner ]; then
+  echo "Configuring the runner..."
+  ./config.sh --unattended \
+    --url "$REPO_URL" \
+    --token "$RUNNER_TOKEN" \
+    --name "Custom Jekyll Runner" \
+    --work _work \
+    --labels self-hosted,jekyll,sonar
+fi
 
 # Run the runner
 exec ./run.sh
