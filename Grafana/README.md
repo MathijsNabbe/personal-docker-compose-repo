@@ -25,6 +25,10 @@ scrape_configs:
   - job_name: 'dcgm_exporter'
     static_configs:
       - targets: ['dcgm_exporter:9400']
+
+  - job_name: 'cadvisor'
+    static_configs:
+      - targets: ['cadvisor:8080']
 ```
 
 ## Grafana Config
