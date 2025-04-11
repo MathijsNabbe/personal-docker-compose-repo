@@ -30,6 +30,8 @@ scrape_configs:
     static_configs:
       - targets: ['cadvisor:8080']
 ```
+> [!IMPORTANT]
+> The external port of Cadvisor is rebound to port 8081 in the docker-compose.yml, because port 8080 is already taken by the Traefik Dashboard. Since prometheus uses communication inside the docker network, the internal port > must be used, which is 808.
 
 ## Grafana Config
 Once Grafana is up:
