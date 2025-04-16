@@ -15,8 +15,10 @@ services:
       traefik.enable: "true"
       traefik.docker.network: "traefik"
 
-      traefik.http.routers.uptime.entrypoints: "web"
       traefik.http.routers.uptime.rule: "Host(`uptime.mathijsnabbe.nl`)"
+      traefik.http.routers.uptime.entrypoints: "websecure"
+      traefik.http.routers.uptime.tls: "true"
+      traefik.http.routers.uptime.tls.certresolver: "transip"
       traefik.http.routers.uptime.service: "uptime-svc"
       traefik.http.services.uptime-svc.loadbalancer.server.port: 3001
 

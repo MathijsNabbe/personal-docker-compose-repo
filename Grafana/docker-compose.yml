@@ -68,8 +68,10 @@ services:
       traefik.enable: "true"
       traefik.docker.network: "traefik"
 
-      traefik.http.routers.grafana.entrypoints: "web"
       traefik.http.routers.grafana.rule: "Host(`stats.mathijsnabbe.nl`)"
+      traefik.http.routers.grafana.entrypoints: "websecure"
+      traefik.http.routers.grafana.tls: "true"
+      traefik.http.routers.grafana.tls.certresolver: "transip"
       traefik.http.routers.grafana.service: "grafana-svc"
       traefik.http.services.grafana-svc.loadbalancer.server.port: 3000
 
@@ -79,5 +81,4 @@ volumes:
 networks:
   monitoring:
   traefik:
-
     external: true
