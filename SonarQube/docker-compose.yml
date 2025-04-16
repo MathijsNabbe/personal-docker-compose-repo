@@ -23,8 +23,10 @@ services:
       traefik.enable: "true"
       traefik.docker.network: "traefik"
 
-      traefik.http.routers.sonarqube.entrypoints: "web"
       traefik.http.routers.sonarqube.rule: "Host(`analysis.mathijsnabbe.nl`)"
+      traefik.http.routers.sonarqube.entrypoints: "websecure"
+      traefik.http.routers.sonarqube.tls: "true"
+      traefik.http.routers.sonarqube.tls.certresolver: "transip"
       traefik.http.routers.sonarqube.service: "sonarqube-svc"
       traefik.http.services.sonarqube-svc.loadbalancer.server.port: 9000
 
