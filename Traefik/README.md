@@ -4,4 +4,10 @@ This docker-compose file will initialize Traefik as a reverse-proxy, with all co
 # Hostnames & Ports
 | Hostname | Service | Port |
 | :------: | :-----: | :--: |
-| [dashboard.mathijsnabbe.nl](http://dashboard.mathijsnabbe.nl) | Connect to the Traefik dashboard. | 8080 |
+| [dashboard.mathijsnabbe.nl](https://dashboard.mathijsnabbe.nl) | Connect to the Traefik dashboard. | 8080 |
+
+# Environment Variables
+| Variable | Description |
+| :------: | ----------- |
+| EMAIL | Identification for Let's Encrypt |
+

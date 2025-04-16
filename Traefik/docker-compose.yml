@@ -19,6 +19,7 @@ services:
     volumes:
       - traefik-ssl-certs:/ssl-certs
       - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /home/mahnabbe/secrets/transip.pem:/transip.pem:ro
     networks:
       - traefik
     restart: unless-stopped
@@ -31,8 +32,19 @@ services:
       - TRAEFIK_PROVIDERS_DOCKER=true
       - TRAEFIK_PROVIDERS_DOCKER_EXPOSEDBYDEFAULT=false
 
+      - TRANSIP_ACCOUNT_NAME=mahnabbe
+      - TRANSIP_PRIVATE_KEY_PATH=/transip.pem
+
+      - TRAEFIK_CERTIFICATESRESOLVERS.transip.ACME.EMAIL=${EMAIL}
+      - TRAEFIK_CERTIFICATESRESOLVERS.transip.ACME.STORAGE=/acme.json
+      - TRAEFIK_CERTIFICATESRESOLVERS.transip.ACME.DNSCHALLENGE.PROVIDER=transip
+      - TRAEFIK_CERTIFICATESRESOLVERS.transip.ACME.DNSCHALLENGE.DELAYBEFORECHECK=0
+      - TRAEFIK_CERTIFICATESRESOLVERS.transip.ACME.DNSCHALLENGE.DISABLEPROPAGATIONCHECK=false
+
       - TRAEFIK_ENTRYPOINTS_web=true
       - TRAEFIK_ENTRYPOINTS_web_ADDRESS=:80
+      - TRAEFIK_ENTRYPOINTS_web_HTTP_REDIRECTIONS_ENTRYPOINT_TO=websecure
+      - TRAEFIK_ENTRYPOINTS_web_HTTP_REDIRECTIONS_ENTRYPOINT_SCHEME=https
 
       - TRAEFIK_ENTRYPOINTS_websecure=true
       - TRAEFIK_ENTRYPOINTS_websecure_ADDRESS=:443
@@ -44,9 +56,10 @@ services:
       traefik.enable: "true"
       traefik.docker.network: "traefik"
 
-      traefik.http.routers.traefik.entrypoints: "web"
       traefik.http.routers.traefik.rule: "Host(`dashboard.mathijsnabbe.nl`)"
+      traefik.http.routers.traefik.entrypoints: "websecure"
+      traefik.http.routers.traefik.tls: "true"
+      traefik.http.routers.traefik.tls.certresolver: "transip"
       traefik.http.routers.traefik.service: "traefik-svc"
       traefik.http.services.traefik-svc.loadbalancer.server.port: 8080
-
 
